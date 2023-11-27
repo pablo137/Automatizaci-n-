@@ -59,3 +59,17 @@ Scenario: Validate the User Name field when trying to enter 61 special character
   Given I enter User Name with '$###"!###!"##!"#$###"!###!"##!"#$###"!###!"##!"#$###"!###!"##':   
   When I remark the field User Name
   Then the User Name field should have been reduced to 60 characters
+
+Scenario: Validate User Name field length
+  Given I enter User Name with "<input>"
+  When I remark the field User Name
+  Then the field User Name should have "<expected>" characters.
+
+  Examples:
+    | input                                                         | expected |
+    | Evangeline Victor                                             | 17       |
+    | Lorem, ipsum dolor sit amet consectetur adipisicing elit. Acc | 60       |
+    | 77733311113777733                                             | 17       |
+    | 7773331111377773331111377773331111377773331111377773331111373 | 60       |
+    | $###"!###!"##!"#$                                             | 17       |
+    | $###"!###!"##!"#$###"!###!"##!"#$###"!###!"##!"#$###"!###!"## | 60       |
