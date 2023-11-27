@@ -23,3 +23,11 @@ Scenario: Validate an unregistered user
     | password | 123  |       
   When I press the button "submit"
   Then A "Enter your userName and password correct" message is then displayed on the screen
+
+@maximize
+Scenario: Validate a user with incorrect password
+  Given I enter the following user credentials:
+    | username | pepe |
+    | password | 321  |       
+  When I press the button "submit"
+  Then A "Enter your userName and password correct" message is then displayed on the screen
