@@ -1,5 +1,6 @@
 Given('I am on the main page') do
     visit 'https://demo.guru99.com/test/newtours/index.php'
+    page.driver.browser.manage.window.maximize
 end
 
 Given('Enter on the login page') do
