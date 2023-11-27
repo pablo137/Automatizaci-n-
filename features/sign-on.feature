@@ -31,3 +31,9 @@ Scenario: Validate a user with incorrect password
     | password | 321  |       
   When I press the button "submit"
   Then A "Enter your userName and password correct" message is then displayed on the screen
+
+@maximize
+Scenario: Validate User Name field by entering only 17 letters
+  Given I enter User Name with "Evangeline Victor":   
+  When I remark the field User Name
+  Then the field User Name should have only 17 letters.

@@ -31,4 +31,16 @@ Then('A {string} message is then displayed on the screen') do |msg|
     expect(page).to have_content(msg)
 end
 
+Given('I enter User Name with {string}:') do |string|
+  fill_in 'userName', with: string
+end
+
+When('I remark the field User Name') do
+  input_value = find_field('userName').value
+end
+
+Then('the field User Name should have only {int} letters.') do |number|
+  input_value = find_field('userName').value
+  expect(input_value.length).to eq(number)
+end
 
