@@ -32,13 +32,17 @@ When('I remark the field User Name') do
   input_value = find_field('userName').value
 end
 
-Then('the field User Name should have only {int} letters.') do |number|
+Then('the field User Name should have only {int} characters.') do |number|
   input_value = find_field('userName').value
   expect(input_value.length).to eq(number)
 end
 
-Then('the User Name field should have been reduced to {int} letters') do |number|
+Then('the User Name field should have been reduced to {int} characters') do |number|
   input_value = find_field('userName').value
   expect(input_value.length).to eq(number)
+end
+
+Given('I enter User Name with {int}:') do |int|
+  fill_in 'userName', with: int
 end
 
