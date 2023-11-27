@@ -50,3 +50,7 @@ Scenario: Validate the User Name field when trying to enter 61 numbers
   When I remark the field User Name
   Then the User Name field should have been reduced to 60 characters
 
+Scenario: Validate User Name field by entering only 17 special characters
+  Given I enter User Name with '$###"!###!"##!"#$':   
+  When I remark the field User Name
+  Then the field User Name should have only 17 characters.
