@@ -9,13 +9,6 @@ Given('Enter on the login page') do
   visit(url)
 end
 
-# Given('I enter the following user credentials') do |string|
-#   fill_in 'userName', :with => string
-# end
-# Given('I enter Password {string}') do |string|
-#   fill_in 'password', :with => string
-# end
-
 Given("I enter the following user credentials:") do |table|
   credentials = table.rows_hash
   fill_in 'userName', with: credentials['username']
@@ -40,6 +33,11 @@ When('I remark the field User Name') do
 end
 
 Then('the field User Name should have only {int} letters.') do |number|
+  input_value = find_field('userName').value
+  expect(input_value.length).to eq(number)
+end
+
+Then('the User Name field should have been reduced to {int} letters') do |number|
   input_value = find_field('userName').value
   expect(input_value.length).to eq(number)
 end
