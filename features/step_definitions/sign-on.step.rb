@@ -33,12 +33,7 @@ When('I remark the field {string}') do |string|
   input_value = find_field(string).value
 end
 
-Then('the field User Name should have only {float} characters.') do |float|
-  input_value = find_field('userName').value
+Then('the field {string} should have only {float} characters.') do |field, float|
+  input_value = find_field(field).value
   expect(input_value.length).to eq(float)
-end
-
-Then('the User Name field should have been reduced to {int} characters') do |number|
-  input_value = find_field('userName').value
-  expect(input_value.length).to eq(number)
 end

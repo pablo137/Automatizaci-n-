@@ -33,13 +33,23 @@ Scenario: Validate a user with incorrect password
 Scenario: Validate fields sign-on
   Given I enter '<field>' with '<input>':   
   When I remark the field '<field>'
-  Then the field User Name should have only <expected> characters.
+  Then the field '<field>' should have only <expected> characters.
 
   Examples:
     | field    | input                                                         | expected |
     | userName | Evangeline Victor                                             | 17       |
-    | userName | Lorem, ipsum dolor sit amet consectetur adipisicing elit. Acc | 60       |
+    | userName | Esto es un campo de sesenta y uno caracteres Esto es un campo | 60       |
     | userName | 77733311113777733                                             | 17       |
     | userName | 7773331111377773331111377773331111377773331111377773331111373 | 60       |
     | userName | $###"!###!"##!"#$                                             | 17       |
     | userName | $###"!###!"##!"#$###"!###!"##!"#$###"!###!"##!"#$###"!###!"## | 60       |
+    | userName | #!137777111addada                                             | 17       |
+    | userName | 137777111addadadapeepep!"#!"#!137777111addadadapeepep!"#!"#ap | 60       |
+    | password | Evangeline Victor                                             | 17       |
+    | password | Esto es un campo de sesenta y uno caracteres Esto es un campo | 60       |
+    | password | 77733311113777733                                             | 17       |
+    | password | 7773331111377773331111377773331111377773331111377773331111373 | 60       |
+    | password | $###"!###!"##!"#$                                             | 17       |
+    | password | $###"!###!"##!"#$###"!###!"##!"#$###"!###!"##!"#$###"!###!"## | 60       |
+    | password | #!137777111addada                                             | 17       |
+    | password | 137777111addadadapeepep!"#!"#!137777111addadadapeepep!"#!"#ap | 60       |
