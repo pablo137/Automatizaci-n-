@@ -53,3 +53,17 @@ Scenario: Validate fields sign-on
     | password | $###"!###!"##!"#$###"!###!"##!"#$###"!###!"##!"#$###"!###!"## | 60       |
     | password | #!137777111addada                                             | 17       |
     | password | 137777111addadadapeepep!"#!"#!137777111addadadapeepep!"#!"#ap | 60       |
+
+Scenario: Validate exception by filling in only the User Name field
+  Given I enter the following user credentials:
+    | username | fakeuser |
+    | password |  |       
+  When I press the button "submit"
+  Then A "Enter your userName and password correct" message is then displayed on the screen
+
+Scenario: Validate exception by filling in only the Password field
+  Given I enter the following user credentials:
+    | username |  |
+    | password | 137 |       
+  When I press the button "submit"
+  Then A "Enter your userName and password correct" message is then displayed on the screen
