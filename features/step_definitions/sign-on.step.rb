@@ -25,25 +25,20 @@ Then('A {string} message is then displayed on the screen') do |msg|
     expect(page).to have_content(msg)
 end
 
-Given('I enter User Name with {string}:') do |string|
-  fill_in 'userName', with: string
+Given('I enter {string} with {string}:') do |field, value|
+  fill_in field, with: value
 end
 
-When('I remark the field User Name') do
-  input_value = find_field('userName').value
+When('I remark the field {string}') do |string|
+  input_value = find_field(string).value
 end
 
-Then('the field User Name should have only {int} characters.') do |number|
+Then('the field User Name should have only {float} characters.') do |float|
   input_value = find_field('userName').value
-  expect(input_value.length).to eq(number)
+  expect(input_value.length).to eq(float)
 end
 
 Then('the User Name field should have been reduced to {int} characters') do |number|
   input_value = find_field('userName').value
   expect(input_value.length).to eq(number)
 end
-
-Given('I enter User Name with {int}:') do |int|
-  fill_in 'userName', with: int
-end
-
