@@ -55,3 +55,8 @@ Scenario: Validate user registration alert in the User Information section by on
     When I press the button "submit"
     Then A "PAssword and con.password does not match" message is then displayed on the screen
 
+Scenario: Validate user registration alert in the User Information section by only filling out the Confirm Password field.
+    Given I enter in the fields with:
+        | cpassword  | 137                      |
+    When I press the button "submit"
+    Then A "PAssword and con.password does not match" message is then displayed on the screen
