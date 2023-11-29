@@ -22,3 +22,10 @@ Scenario: Validate user registration successfully
         | cpassword | 137                       |
     When I press the button "submit"
     Then A "Thank you for registering" message is then displayed on the screen
+
+Scenario: Validate user registration, leaving all fields empty.
+    Given I enter in the fields with:
+        | firstname |                           |
+    When I press the button "submit"
+    Then A "Thank you for registering" message is then displayed on the screen
+
