@@ -29,3 +29,9 @@ Scenario: Validate user registration, leaving all fields empty.
     When I press the button "submit"
     Then A "Thank you for registering" message is then displayed on the screen
 
+Scenario: Validate user registration in the User Information section by only filling out the User Name field.
+    Given I enter in the fields with:
+        | username  | pepe1137                  |
+    When I press the button "submit"
+    Then A "Thank you for registering" message is then displayed on the screen
+
