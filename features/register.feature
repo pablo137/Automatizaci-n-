@@ -42,3 +42,10 @@ Scenario: Validate user registration in the User Information section by filling 
     When I press the button "submit"
     Then A "Thank you for registering" message is then displayed on the screen
 
+Scenario: Validate user registration alert in the User Information section by filling out the Password and Confirm Password fields with different values.
+    Given I enter in the fields with:
+        | password  | 2611                      |
+        | cpassword | 137                       |
+    When I press the button "submit"
+    Then A "PAssword and con.password does not match" message is then displayed on the screen
+
