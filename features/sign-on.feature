@@ -8,7 +8,7 @@ Background:
   Given I am on the main page
   And Enter on the login page
 
-@SmokeTest
+
 Scenario: Validate a successfully authenticated user
   Given I enter the following user credentials:
     | username | pepe |
@@ -29,9 +29,9 @@ Scenario: Validate a user with incorrect password
     | password | 321  |       
   When I press the button "submit"
   Then A "Enter your userName and password correct" message is then displayed on the screen
-@p
+
 Scenario: Validate fields sign-on
-  Given I enter '<field>' with '<input>' that is <verify> characters   
+  Given I enter '<field>' with '<input>' and verify <verify> characters   
   When I remark the field '<field>'
   Then the field '<field>' should have only <expected> characters.
 
