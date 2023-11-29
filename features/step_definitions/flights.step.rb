@@ -27,7 +27,6 @@ When(/^I enter flight details as shown below$/) do |table|
   end
 end
 
-
 When(/^I press the CONTINUE button$/) do
   xpath = '/html/body/div[2]/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr/td[2]/table/tbody/tr[5]/td/form/table/tbody/tr[14]/td/input'
   find(:xpath, xpath).click
@@ -36,4 +35,10 @@ end
 Then(/^A web site No Seats Avaialble message$/) do
   expected_message = "After flight finder - No Seats Avaialble"
   expect(page).to have_content(expected_message)
+end
+
+When(/^I press the yellow BACK TO HOME button$/) do
+  xpath = '/html/body/div[2]/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr[1]/td[2]/table/tbody/tr[2]/td/a'
+  find(:xpath, xpath).click
+  sleep 2
 end

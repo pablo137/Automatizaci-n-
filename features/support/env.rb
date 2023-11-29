@@ -32,5 +32,5 @@ end
 #CapybaraDriverRegistrar.register_selenium_driver(:firefox)
 CapybaraDriverRegistrar.register_selenium_driver(:chrome)
 Capybara.run_server = false
+Capybara.save_path = 'tmp/capybara'
 #World(Capybara)
-
