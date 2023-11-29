@@ -1,39 +1,39 @@
 When(/^I enter flight details as shown below$/) do |table|
   data = table.rows_hash
   data.each_pair do |key, value|
+    puts "Entering data: #{key} => #{value}"
     case key
-    # when "Type:"
-    #   choose('roundtrip')
+    when "Type:"
+      find("input[type='radio'][name='tripType'][value='#{value}']").click
     when "Passengers:"
       select value, from: 'passCount'
     when "Departing From:"
       select value, from: 'fromPort'
     when "On:"
-      select 'July', from: 'fromMonth'
-      select '12', from: 'fromDay'
+      date_parts = value.split(' ')
+      select date_parts[0], from: 'fromMonth'
+      select date_parts[1], from: 'fromDay'
     when "Arriving In:"
-      select 'New York', from: 'toPort'
+      select value, from: 'toPort'
     when "Returning:"
-      select 'December', from: 'toMonth'
-      select '3', from: 'toDay'
-    # when "Service Class:"
-    #   choose('Business')
+      date_parts = value.split(' ')
+      select date_parts[0], from: 'toMonth'
+      select date_parts[1], from: 'toDay'
+    when "Service Class:"
+      find("input[type='radio'][name='servClass'][value='#{value}']").click
     when "Airline:"
-      select 'Blue Skies Airlines', from: 'airline'
+      select value, from: 'airline'
     end
   end
-  sleep 2
 end
 
 
 When(/^I press the CONTINUE button$/) do
   xpath = '/html/body/div[2]/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr/td[2]/table/tbody/tr[5]/td/form/table/tbody/tr[14]/td/input'
   find(:xpath, xpath).click
-  sleep 2
 end
 
 Then(/^A web site No Seats Avaialble message$/) do
   expected_message = "After flight finder - No Seats Avaialble"
   expect(page).to have_content(expected_message)
-  sleep 2
 end
