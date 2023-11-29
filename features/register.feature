@@ -35,3 +35,10 @@ Scenario: Validate user registration in the User Information section by only fil
     When I press the button "submit"
     Then A "Thank you for registering" message is then displayed on the screen
 
+Scenario: Validate user registration in the User Information section by filling out the Password and Confirm Password fields with the same value.
+    Given I enter in the fields with:
+        | password  | 2611                      |
+        | cpassword | 2611                      |
+    When I press the button "submit"
+    Then A "Thank you for registering" message is then displayed on the screen
+
