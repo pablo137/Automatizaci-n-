@@ -25,8 +25,9 @@ Then('A {string} message is then displayed on the screen') do |msg|
     expect(page).to have_content(msg)
 end
 
-Given('I enter {string} with {string}:') do |field, value|
+Given('I enter {string} with {string} that is {float} characters') do |field, value, verify|
   fill_in field, with: value
+  expect(value.length).to eq(verify)
 end
 
 When('I remark the field {string}') do |string|
