@@ -27,6 +27,7 @@ Scenario: Validate a user with incorrect password
   When I press the button "submit"
   Then A "Enter your userName and password correct" message is then displayed on the screen
 
+@p
 Scenario: Validate fields sign-on
   Given I enter '<field>' with '<input>' and verify <verify> characters   
   When I remark the field '<field>'

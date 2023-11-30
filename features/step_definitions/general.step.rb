@@ -1,6 +1,5 @@
 Given('Enter on the {string} page') do |link|
-    click_on link
-    url = current_url.split('#').first
+    url = find_link(link)[:href].split('#').first
     visit(url)
 end
 
