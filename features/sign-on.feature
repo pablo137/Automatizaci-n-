@@ -8,7 +8,6 @@ Background:
   Given I am on the main page
   And Enter on the login page
 
-
 Scenario: Validate a successfully authenticated user
   Given I enter the following user credentials:
     | username | pepe |
