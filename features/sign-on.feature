@@ -3,10 +3,8 @@ Feature: Login
   I want to test Guru99 login page
   so I learn how to use Capybara
 
-
 Background:
-  Given I am on the main page
-  And Enter on the login page
+  Given Enter on the "SIGN-ON" page
 
 Scenario: Validate a successfully authenticated user
   Given I enter the following user credentials:
