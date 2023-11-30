@@ -3,9 +3,8 @@ Given('Enter on the {string} page') do |link|
     visit(url)
 end
 
-When('I press the button {string}') do |name_button|
-    button = find_button(name_button)
-    button.click
+When('I press the button {string}') do |string|
+    click_button(string) 
 end
 
 Then('A {string} message is then displayed on the screen') do |msg|

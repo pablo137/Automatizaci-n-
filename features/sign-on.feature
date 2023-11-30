@@ -10,24 +10,23 @@ Scenario: Validate a successfully authenticated user
   Given I enter the following user credentials:
     | username | pepe |
     | password | 123  |       
-  When I press the button "submit"
+  When I press the button "Submit"
   Then A "Login Successfully" message is then displayed on the screen
 
 Scenario: Validate an unregistered user
   Given I enter the following user credentials:
     | username | fakeuser |
     | password | 123  |       
-  When I press the button "submit"
+  When I press the button "Submit"
   Then A "Enter your userName and password correct" message is then displayed on the screen
 
 Scenario: Validate a user with incorrect password
   Given I enter the following user credentials:
     | username | pepe |
     | password | 321  |       
-  When I press the button "submit"
+  When I press the button "Submit"
   Then A "Enter your userName and password correct" message is then displayed on the screen
 
-@p
 Scenario: Validate fields sign-on
   Given I enter '<field>' with '<input>' and verify <verify> characters   
   When I remark the field '<field>'
@@ -56,12 +55,12 @@ Scenario: Validate exception by filling in only the User Name field
   Given I enter the following user credentials:
     | username | fakeuser |
     | password |  |       
-  When I press the button "submit"
+  When I press the button "Submit"
   Then A "Enter your userName and password correct" message is then displayed on the screen
 
 Scenario: Validate exception by filling in only the Password field
   Given I enter the following user credentials:
     | username |  |
     | password | 137 |       
-  When I press the button "submit"
+  When I press the button "Submit"
   Then A "Enter your userName and password correct" message is then displayed on the screen

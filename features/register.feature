@@ -4,8 +4,7 @@ Feature: Register
   so I learn how to use Capybara
 
 Background:
-  Given I am on the main page
-  And Enter on the register page
+  And Enter on the "REGISTER" page
 
 Scenario: Validate user registration successfully
     Given I enter in the fields with:
