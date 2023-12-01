@@ -10,3 +10,10 @@ Feature: Several websites are under construction
     Then A web site under construction message
     When I press the BACK TO HOME button
     Then I am on the Mercury Tours homepage
+
+  @hotels
+  Scenario: Enter the Hotels section
+    Given I click the "Hotels" link
+    Then A web site under construction message
+    When I press the BACK TO HOME button
+    Then I am on the Mercury Tours homepage
