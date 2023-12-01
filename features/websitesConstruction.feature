@@ -1,10 +1,8 @@
 Feature: Several websites are under construction
     Return to home
 
-  Background: 
-    Given I am on the Mercury Tours homepage
 
-  @CONTACT @Hotels @Car_Rentals @Destinations @Vacations
+  @p
   Scenario Outline: Enter a section
     Given I click the "<Section>" link
     Then A web site under construction message

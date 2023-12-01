@@ -74,7 +74,6 @@ Scenario: Validate user registration alert in the User Information section by on
     When I press the button "submit"
     Then A "PAssword and con.password does not match" message is then displayed on the screen
 
-@p
 Scenario: Validate fields with letters
   Given I enter '<field>' with '<input>' and verify <verify> characters   
   When I remark the field '<field>'
@@ -88,7 +87,6 @@ Scenario: Validate fields with letters
     | city       | Whashinton center                                             | 17     | 17       |
     | state      | United States USA                                             | 17     | 17       |
 
-@p
 @bug
 @It_should_display_an_alert_message_that_says_Only_numbers_can_be_entered
 Scenario: Validate fields with letters
@@ -101,7 +99,6 @@ Scenario: Validate fields with letters
     | phone      | United States USA                                             | 17     | 17       |
     | postalCode | United States USA                                             | 17     | 17       |
 
-@p
 @bug
 @It_should_display_an_alert_message_that_says_You_must_enter_a_valid_email_Example:_pepe@gmail.com
 Scenario: Validate email field 
@@ -112,7 +109,7 @@ Scenario: Validate email field
   Examples:
     | field      | input                                                         | verify | expected |
     | userName   | #!137777111addada                                             | 17     | 17       |
-@p
+
 @bug
 @It_should_display_an_alert_message_that_says_"Only_a_maximum_of_60_characters_are_allowed"
 Scenario: Validate excessive characters on the register fields.
@@ -126,7 +123,7 @@ Scenario: Validate excessive characters on the register fields.
     | lastName   | Lorem ipsum dolor sit amet consectetur adipisicing elit. Dele     | 61     | 60       |
     | address1   | Lorem ipsum dolor sit amet consectetur adipisicing elit. Dele     | 61     | 60       |
     | city       | Lorem ipsum dolor sit amet consectetur adipisicing elit. Dele     | 61     | 60       |
-@p
+
 @bug
 @It_should_display_an_alert_message_that_says_"Only_a_maximum_of_20_characters_are_allowed"
 Scenario: Validate excessive characters on the register fields.
@@ -137,7 +134,7 @@ Scenario: Validate excessive characters on the register fields.
   Examples:
     | field      | input                                                             | verify | expected |
     | phone      | #!137777111addada1231                                             | 21     | 20       |
-@p
+
 @bug
 @It_should_display_an_alert_message_that_says_"Only_a_maximum_of_64_characters_are_allowed"
 Scenario: Validate excessive characters on the register fields.
@@ -148,7 +145,7 @@ Scenario: Validate excessive characters on the register fields.
   Examples:
     | field      | input                                                             | verify | expected |
     | userName   | 312231sdffsad312231sdffsad312231sdffsad312231sdffsad3122@gmil.com | 65     | 64       |
-@p
+
 @bug
 @It_should_display_an_alert_message_that_says_"Only_a_maximum_of_40_characters_are_allowed"
 Scenario: Validate excessive characters on the register fields.
