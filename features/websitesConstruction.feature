@@ -2,7 +2,6 @@ Feature: Several websites are under construction
     Return to home
 
 
-  @p
   Scenario Outline: Enter a section
     Given I click the "<Section>" link
     Then A web site under construction message

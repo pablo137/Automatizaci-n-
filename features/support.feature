@@ -3,8 +3,7 @@ Feature: Mercury Tours Verify Support
   Back to Home
 
 Scenario: Enter the support section
-    Given I am on the Mercury Tours homepage
-    And I click the "SUPPORT" link
+    Given I click the "SUPPORT" link
     Then A web site under construction message
 
 @supportToHome

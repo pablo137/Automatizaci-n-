@@ -2,9 +2,6 @@ Feature: Mercury Tours Flights section
   Find flights with low fares
   Seats not available
 
-  Background: 
-    Given I am on the Mercury Tours homepage
-
   @vuelos
   Scenario: Find a flight
     Given I click the "Flights" link
