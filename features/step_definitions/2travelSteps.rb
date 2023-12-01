@@ -1,12 +1,10 @@
 Given(/^I am on the Mercury Tours homepage$/) do
      page.driver.browser.manage.window.maximize
-     visit('http://demo.guru99.com/test/newtours/')
-
+     visit('https://demo.guru99.com/test/newtours/index.php')
 end
 
 Given(/^I click the "([^"]*)" link$/) do |linkText|
   # Esperar a que aparezca el enlace por su texto
-  # find(:link, linkText).click
   link = find(:link, linkText)
   url = link[:href].split('#').first
   visit(url)
