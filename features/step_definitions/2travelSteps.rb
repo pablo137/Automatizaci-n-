@@ -1,7 +1,6 @@
 Given(/^I am on the Mercury Tours homepage$/) do
      page.driver.browser.manage.window.maximize
      visit('https://demo.guru99.com/test/newtours/index.php')
-
 end
 
 Given(/^I click the "([^"]*)" link$/) do |linkText|
