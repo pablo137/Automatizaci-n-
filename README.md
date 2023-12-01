@@ -27,7 +27,7 @@ gem install capybara-screenshot
 
 
 ## EJECUTAR EL SMOKE TEST
-<span style="color:chartreuse">->cucumber features/sign-on features/register features/flights</span>
+<span style="color:chartreuse">->cucumber features/sign-on.feature features/register.feature features/flights.feature</span>
 
 
 ## EJECUTAR PRUEBAS AUTOMATIZADAS DE LOS BUGS
@@ -38,12 +38,13 @@ gem install capybara-screenshot
 
 ## EJECUTAR REPORTES DE TODAS PRUEBAS AUTOMATIZADAS
 
-<span style="color:chartreuse">->cucumber features -f html -o reports/main-report.html</span>
+<span style="color:chartreuse">->cucumber features -f html -o reports\main-report.html</span>
 
 
 ## EJECUTAR REPORTES DEL SMOKE TEST
-<span style="color:chartreuse">->cucumber features/sign-on features/register features/flights -f html -o reports/smoke-report.html</span>
+<span style="color:chartreuse">->cucumber features/sign-on.feature features/register.feature features/flights.feature -f html -o reports\smoke-report.html</span>
 
 
 ## EJECUTAR REPORTES DE LOS BUGS
-<span style="color:chartreuse">->cucumber features -t '@bug' html -o reports/bugs-report.html</span>
+<span style="color:chartreuse">->cucumber features -t '@bug' -f html -o reports\bugs.html</span>
+</span>
