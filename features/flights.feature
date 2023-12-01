@@ -31,10 +31,6 @@ Feature: Mercury Tours Flights section
       | oneway    |           3 | San Francisco   | July  10     | Seattle       | November  27 | Coach          | Unified Airlines    |
       | oneway    |           4 | Seattle         | November  27 | Sydney        | December  15 | First          | Pangea Airlines     |
 
-# Economy class -> Coach
-# Business class -> Business
-# First class -> First
-
   @backToHome
   Scenario: flight BACK to Home
     Given I click the "Flights" link
