@@ -18,9 +18,16 @@ Feature: Several websites are under construction
     When I press the BACK TO HOME button
     Then I am on the Mercury Tours homepage
 
-@carRentals
+  @carRentals
   Scenario: Enter the Car Rentals section
     Given I click the "Car Rentals" link
+    Then A web site under construction message
+    When I press the BACK TO HOME button
+    Then I am on the Mercury Tours homepage
+
+  @Destinations
+  Scenario: Enter the Destinations section that is under construction
+    Given I click the "Destinations" link
     Then A web site under construction message
     When I press the BACK TO HOME button
     Then I am on the Mercury Tours homepage
