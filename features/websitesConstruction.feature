@@ -17,3 +17,10 @@ Feature: Several websites are under construction
     Then A web site under construction message
     When I press the BACK TO HOME button
     Then I am on the Mercury Tours homepage
+
+@carRentals
+  Scenario: Enter the Car Rentals section
+    Given I click the "Car Rentals" link
+    Then A web site under construction message
+    When I press the BACK TO HOME button
+    Then I am on the Mercury Tours homepage
