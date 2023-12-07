@@ -80,13 +80,14 @@ Scenario: Validate fields with letters
     | field      | input                                                         | verify | expected |
     | phone      | United States USA                                             | 17     | 17       |
     | postalCode | United States USA                                             | 17     | 17       |
-
+@p
 @bug
 @It_should_display_an_alert_message_that_says_You_must_enter_a_valid_email_Example:_pepe@gmail.com
 Scenario: Validate email field 
   Given I enter '<field>' with '<input>' and verify <verify> characters   
   When I remark the field '<field>'
   Then the field '<field>' should have only <expected> characters.
+  And the '<field>' should contain a valid email
 
   Examples:
     | field      | input                                                         | verify | expected |
