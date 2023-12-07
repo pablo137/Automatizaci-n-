@@ -13,26 +13,22 @@ Scenario: Validate user registration successfully
   Then A "Thank you for registering" message is then displayed on the screen
 
 @bug
-@It_should_display_an_alert_message_that_says_"Please_fill_in_the_user_information_section."
 Scenario: Validate user registration, leaving all fields empty.
     Given "I leave all the fields empty"
     When I press the button "submit"
-    Then A "Thank you for registering" message is then displayed on the screen
+    Then A "Please fill in the user information section" message is then displayed on the screen
 
 @bug
-@It_should_display_an_alert_message_that_says_"Please_fill_in_the_user_information_section."
 Scenario: Validate user registration in the User Information section by only filling out the User Name field.
     Given "I only fill in the User Name field"
     When I press the button "submit"
-    Then A "Thank you for registering" message is then displayed on the screen
-
+    Then A "Please fill in the user information section" message is then displayed on the screen
 
 @bug
-@It_should_display_an_alert_message_that_says_"Please_fill_in_the_user_information_section."
 Scenario: Validate user registration in the User Information section by filling out the User Name empty, the Password and Confirm Password fields with the same value.
     Given "I only enter the Password and Confirm Password fields"
     When I press the button "submit"
-    Then A "Thank you for registering" message is then displayed on the screen
+    Then A "Please fill in the user information section" message is then displayed on the screen
 
 
 Scenario: Validate user registration in the User Information section by filling out the User Name, the Password and Confirm Password fields with the same value.
