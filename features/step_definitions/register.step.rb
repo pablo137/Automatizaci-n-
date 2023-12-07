@@ -67,3 +67,13 @@ Given('{string}') do | data |
   fields = get_fields(data)
   fill_in_fields(fields)
 end
+
+And('the {string} should contain only numbers') do |field|
+  input_value = find_field(field).value
+
+  if input_value.match?(/\A\d+\z/)
+    puts "#{field} contains only numbers."
+  else
+    raise "#{field} should contain only numbers."
+  end
+end
