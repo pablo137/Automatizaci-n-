@@ -1,26 +1,26 @@
 Feature: Register
-  As a BDD student
-  I want to test Guru99 REGISTER page
-  so I learn how to use Capybara
+  As a regular user,
+  I want to register my information
+  So I can access the website and enjoy the benefits of being registered on the Mercury Tours page.
 
 Background:
-  And Enter on the "REGISTER" page
+  Given Enter on the "REGISTER" page
 
 Scenario: Validate user registration successfully
-    Given I enter in the fields with:
-        | firstname | Godson                    |
-        | lastname  | Adom                      |
-        | phone     | 77665544                  |
-        | email     | god@pe.co                 |
-        | address   | Final East Circumbalacion |
-        | city      | Cochabamba                |
-        | state     | Cercado                   |
-        | postacode | 591                       |
-        | username  | godson                    |
-        | password  | 137                       |
-        | cpassword | 137                       |
-    When I press the button "submit"
-    Then A "Thank you for registering" message is then displayed on the screen
+  Given I enter in the fields with:
+    | firstname | Godson                    |
+    | lastname  | Adom                      |
+    | phone     | 77665544                  |
+    | email     | god@pe.co                 |
+    | address   | Final East Circumbalacion |
+    | city      | Cochabamba                |
+    | state     | Cercado                   |
+    | postacode | 591                       |
+    | username  | godson                    |
+    | password  | 137                       |
+    | cpassword | 137                       |
+  When I press the button "submit"
+  Then A "Thank you for registering" message is then displayed on the screen
 
 @bug
 @It_should_display_an_alert_message_that_says_"Please_fill_in_the_user_information_section."
