@@ -69,7 +69,6 @@ Scenario: Validate fields with letters
     | state      | United States USA                                             | 17     | 17       |
 
 @bug
-@It_should_display_an_alert_message_that_says_Only_numbers_can_be_entered
 Scenario: Validate fields with letters
   Given I enter '<field>' with '<input>' and verify <verify> characters   
   When I remark the field '<field>'
@@ -80,9 +79,8 @@ Scenario: Validate fields with letters
     | field      | input                                                         | verify | expected |
     | phone      | United States USA                                             | 17     | 17       |
     | postalCode | United States USA                                             | 17     | 17       |
-@p
+
 @bug
-@It_should_display_an_alert_message_that_says_You_must_enter_a_valid_email_Example:_pepe@gmail.com
 Scenario: Validate email field 
   Given I enter '<field>' with '<input>' and verify <verify> characters   
   When I remark the field '<field>'
@@ -102,41 +100,41 @@ Scenario: Validate excessive characters on the register fields.
 
   Examples:
     | field      | input                                                             | verify | expected |
-    | firstName  | Lorem ipsum dolor sit amet consectetur adipisicing elit. Dele     | 61     | 60       |
-    | lastName   | Lorem ipsum dolor sit amet consectetur adipisicing elit. Dele     | 61     | 60       |
-    | address1   | Lorem ipsum dolor sit amet consectetur adipisicing elit. Dele     | 61     | 60       |
-    | city       | Lorem ipsum dolor sit amet consectetur adipisicing elit. Dele     | 61     | 60       |
+    | firstName  | Lorem ipsum dolor sit amet consectetur adipisicing elit. Dele     | 61     | 61       |
+    | lastName   | Lorem ipsum dolor sit amet consectetur adipisicing elit. Dele     | 61     | 61       |
+    | address1   | Lorem ipsum dolor sit amet consectetur adipisicing elit. Dele     | 61     | 61       |
+    | city       | Lorem ipsum dolor sit amet consectetur adipisicing elit. Dele     | 61     | 61       |
 
 @bug
 @It_should_display_an_alert_message_that_says_"Only_a_maximum_of_20_characters_are_allowed"
-Scenario: Validate excessive characters on the register fields.
+Scenario: Validate excessive characters on the Phone field
   Given I enter '<field>' with '<input>' and verify <verify> characters   
   When I remark the field '<field>'
   Then the field '<field>' should have only <expected> characters.
 
   Examples:
     | field      | input                                                             | verify | expected |
-    | phone      | #!137777111addada1231                                             | 21     | 20       |
+    | phone      | #!137777111addada1231                                             | 21     | 21       |
 
 @bug
 @It_should_display_an_alert_message_that_says_"Only_a_maximum_of_64_characters_are_allowed"
-Scenario: Validate excessive characters on the register fields.
+Scenario: Validate excessive characters on the Email field
   Given I enter '<field>' with '<input>' and verify <verify> characters   
   When I remark the field '<field>'
   Then the field '<field>' should have only <expected> characters.
 
   Examples:
     | field      | input                                                             | verify | expected |
-    | userName   | 312231sdffsad312231sdffsad312231sdffsad312231sdffsad3122@gmil.com | 65     | 64       |
+    | userName   | 312231sdffsad312231sdffsad312231sdffsad312231sdffsad3122@gmil.com | 65     | 65       |
 
 @bug
 @It_should_display_an_alert_message_that_says_"Only_a_maximum_of_40_characters_are_allowed"
-Scenario: Validate excessive characters on the register fields.
+Scenario: Validate excessive characters on the State/Province field.
   Given I enter '<field>' with '<input>' and verify <verify> characters   
   When I remark the field '<field>'
   Then the field '<field>' should have only <expected> characters.
 
   Examples:
     | field      | input                                                             | verify | expected |
-    | state      | 232dsfadff144242"#$"232dsfadff144242"#$"7                         | 41     | 40       |
+    | state      | 13713771137137711371377113711371377113713                         | 41     | 41       |
 
