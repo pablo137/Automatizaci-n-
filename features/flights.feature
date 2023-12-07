@@ -4,7 +4,7 @@ Feature: Mercury Tours Flights section
 
   @vuelos
   Scenario: Find a flight
-    Given I click the "Flights" link
+    Given Enter on the "Flights" page
     And I enter flight details as shown below
       | Type:           | <Type:>           |
       | Passengers:     | <Passengers:>     |
@@ -14,7 +14,7 @@ Feature: Mercury Tours Flights section
       | Returning:      | <Returning:>      |
       | Service Class:  | <Service Class:>  |
       | Airline:        | <Airline:>        |
-    And I press the CONTINUE button
+    When I press the CONTINUE button
     Then A web site No Seats Avaialble message
 
     Examples: 
@@ -30,7 +30,7 @@ Feature: Mercury Tours Flights section
 
   @backToHome
   Scenario: flight BACK to Home
-    Given I click the "Flights" link
+    Given Enter on the "Flights" page
     And I press the CONTINUE button
     When I press the yellow BACK TO HOME button
     Then I am on the Mercury Tours homepage

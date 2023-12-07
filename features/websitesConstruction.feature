@@ -3,8 +3,8 @@ Feature: Several websites are under construction
 
 
   Scenario Outline: Enter a section
-    Given I click the "<Section>" link
-    Then A web site under construction message
+    Given Enter on the "<Section>" page
+    And A web site under construction message
     When I press the BACK TO HOME button
     Then I am on the Mercury Tours homepage
 
