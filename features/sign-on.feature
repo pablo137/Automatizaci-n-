@@ -5,11 +5,9 @@ Feature: Login
 
 Background:
   Given Enter on the "SIGN-ON" page
-
+@p
 Scenario: Validate a successfully authenticated user
-  Given I enter the following user credentials:
-    | username | pepe |
-    | password | 123  |       
+  Given "I enter a valid username and password registered"    
   When I press the button "Submit"
   Then A "Login Successfully" message is then displayed on the screen
 

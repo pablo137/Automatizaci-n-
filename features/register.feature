@@ -6,71 +6,52 @@ Feature: Register
 Background:
   Given Enter on the "REGISTER" page
 
+
 Scenario: Validate user registration successfully
-  Given I enter in the fields with:
-    | firstname | Godson                    |
-    | lastname  | Adom                      |
-    | phone     | 77665544                  |
-    | email     | god@pe.co                 |
-    | address   | Final East Circumbalacion |
-    | city      | Cochabamba                |
-    | state     | Cercado                   |
-    | postacode | 591                       |
-    | username  | godson                    |
-    | password  | 137                       |
-    | cpassword | 137                       |
+  Given "I enter the fields by filling in all the fields correctly"
   When I press the button "submit"
   Then A "Thank you for registering" message is then displayed on the screen
 
 @bug
 @It_should_display_an_alert_message_that_says_"Please_fill_in_the_user_information_section."
 Scenario: Validate user registration, leaving all fields empty.
-    Given I enter in the fields with:
-        | firstname |                           |
+    Given "I leave all the fields empty"
     When I press the button "submit"
     Then A "Thank you for registering" message is then displayed on the screen
 
 @bug
 @It_should_display_an_alert_message_that_says_"Please_fill_in_the_user_information_section."
 Scenario: Validate user registration in the User Information section by only filling out the User Name field.
-    Given I enter in the fields with:
-        | username  | pepe1137                  |
+    Given "I only fill in the User Name field"
     When I press the button "submit"
     Then A "Thank you for registering" message is then displayed on the screen
+
 
 @bug
 @It_should_display_an_alert_message_that_says_"Please_fill_in_the_user_information_section."
 Scenario: Validate user registration in the User Information section by filling out the User Name empty, the Password and Confirm Password fields with the same value.
-    Given I enter in the fields with:
-        | password  | 2611                      |
-        | cpassword | 2611                      |
+    Given "I only enter the Password and Confirm Password fields"
     When I press the button "submit"
     Then A "Thank you for registering" message is then displayed on the screen
 
+
 Scenario: Validate user registration in the User Information section by filling out the User Name, the Password and Confirm Password fields with the same value.
-    Given I enter in the fields with:
-        | username  | pepe2611                  |
-        | password  | 2611                      |
-        | cpassword | 2611                      |
+    Given "I enter valid values in the User Information fields"
     When I press the button "submit"
     Then A "Thank you for registering" message is then displayed on the screen
 
 Scenario: Validate user registration alert in the User Information section by filling out the Password and Confirm Password fields with different values.
-    Given I enter in the fields with:
-        | password  | 2611                      |
-        | cpassword | 137                       |
+    Given "I enter a different password than the confirm password"
     When I press the button "submit"
     Then A "PAssword and con.password does not match" message is then displayed on the screen
 
 Scenario: Validate user registration alert in the User Information section by only filling out the Password field.
-    Given I enter in the fields with:
-        | password  | 2611                      |
+    Given "I enter only the password"
     When I press the button "submit"
     Then A "PAssword and con.password does not match" message is then displayed on the screen
 
 Scenario: Validate user registration alert in the User Information section by only filling out the Confirm Password field.
-    Given I enter in the fields with:
-        | cpassword  | 137                      |
+    Given "I enter only the Confirm Password"
     When I press the button "submit"
     Then A "PAssword and con.password does not match" message is then displayed on the screen
 
