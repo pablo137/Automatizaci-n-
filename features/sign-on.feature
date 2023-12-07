@@ -5,7 +5,7 @@ Feature: Login
 
 Background:
   Given Enter on the "SIGN-ON" page
-@p
+
 Scenario: Validate a successfully authenticated user
   Given "I enter a valid username and password registered"    
   When I press the button "Submit"
@@ -50,14 +50,14 @@ Scenario: Validate excessive characters on the sign-on fields.
 
   Examples:
     | field    | input                                                         | verify | expected |
-    | userName | Esto es un campo de sesenta y uno caracteres Esto es un campo | 61     | 60       |
-    | userName | 7773331111377773331111377773331111377773331111377773331111373 | 61     | 60       |
-    | userName | $###"!###!"##!"#$###"!###!"##!"#$###"!###!"##!"#$###"!###!"## | 61     | 60       |
-    | userName | 137777111addadadapeepep!"#!"#!137777111addadadapeepep!"#!"#ap | 61     | 60       |
-    | password | Esto es un campo de sesenta y uno caracteres Esto es un campo | 61     | 60       |
-    | password | 7773331111377773331111377773331111377773331111377773331111373 | 61     | 60       |
-    | password | $###"!###!"##!"#$###"!###!"##!"#$###"!###!"##!"#$###"!###!"## | 61     | 60       |
-    | password | 137777111addadadapeepep!"#!"#!137777111addadadapeepep!"#!"#ap | 61     | 60       |
+    | userName | Esto es un campo de sesenta y uno caracteres Esto es un campo | 61     | 61       |
+    | userName | 7773331111377773331111377773331111377773331111377773331111373 | 61     | 61       |
+    | userName | $###"!###!"##!"#$###"!###!"##!"#$###"!###!"##!"#$###"!###!"## | 61     | 61       |
+    | userName | 137777111addadadapeepep!"#!"#!137777111addadadapeepep!"#!"#ap | 61     | 61       |
+    | password | Esto es un campo de sesenta y uno caracteres Esto es un campo | 61     | 61       |
+    | password | 7773331111377773331111377773331111377773331111377773331111373 | 61     | 61       |
+    | password | $###"!###!"##!"#$###"!###!"##!"#$###"!###!"##!"#$###"!###!"## | 61     | 61       |
+    | password | 137777111addadadapeepep!"#!"#!137777111addadadapeepep!"#!"#ap | 61     | 61       |
 
 Scenario: Validate exception by filling in only the User Name field
   Given I enter the following user credentials:
