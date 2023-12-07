@@ -21,12 +21,12 @@ Feature: Mercury Tours Flights section
       | Type:     | Passengers: | Departing From: | On:          | Arriving In:  | Returning:   | Service Class: | Airline:            |
       | roundtrip |           1 | Acapulco        | January  1   | Frankfurt     | February  12 | Coach          | No Preference       |
       | oneway    |           2 | Frankfurt       | February  12 | London        | March  11    | Business       | Blue Skies Airlines |
-      # | roundtrip |           3 | London          | March  11    | New York      | April  22    | First          | Unified Airlines    |
-      # | oneway    |           4 | New York        | April  22    | Paris         | May  2       | Coach          | Pangea Airlines     |
-      # | roundtrip |           1 | Paris           | May  2       | Portland      | June  12     | Business       | No Preference       |
-      # | roundtrip |           2 | Portland        | June  12     | San Francisco | July  10     | First          | Blue Skies Airlines |
-      # | oneway    |           3 | San Francisco   | July  10     | Seattle       | November  27 | Coach          | Unified Airlines    |
-      # | oneway    |           4 | Seattle         | November  27 | Sydney        | December  15 | First          | Pangea Airlines     |
+      | roundtrip |           3 | London          | March  11    | New York      | April  22    | First          | Unified Airlines    |
+      | oneway    |           4 | New York        | April  22    | Paris         | May  2       | Coach          | Pangea Airlines     |
+      | roundtrip |           1 | Paris           | May  2       | Portland      | June  12     | Business       | No Preference       |
+      | roundtrip |           2 | Portland        | June  12     | San Francisco | July  10     | First          | Blue Skies Airlines |
+      | oneway    |           3 | San Francisco   | July  10     | Seattle       | November  27 | Coach          | Unified Airlines    |
+      | oneway    |           4 | Seattle         | November  27 | Sydney        | December  15 | First          | Pangea Airlines     |
 
   @backToHome
   Scenario: flight BACK to Home
