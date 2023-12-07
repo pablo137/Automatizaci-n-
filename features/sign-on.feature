@@ -42,7 +42,6 @@ Scenario: Validate fields sign-on
     | password | #!137777111addada                                             | 17     | 17       |
 
 @bug
-@It_should_display_an_alert_message_that_says_"Only_a_maximum_of_60_characters_are_allowed"
 Scenario: Validate excessive characters on the sign-on fields.
   Given I enter '<field>' with '<input>' and verify <verify> characters   
   When I remark the field '<field>'

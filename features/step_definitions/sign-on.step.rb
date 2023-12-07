@@ -18,7 +18,7 @@ Then('the field {string} should have only {float} characters.') do |field, expec
   actual_length = input_value.length
 
   if actual_length != expected
-    raise "it should display an alert message that says: Only a maximum of #{actual_length} characters are allowed"
+    raise "it should display an alert message that says: Only a maximum of #{actual_length} characters in the #{field} field"
   else
     expect(actual_length).to eq(expected)
   end

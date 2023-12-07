@@ -74,6 +74,7 @@ Scenario: Validate fields with letters
   Given I enter '<field>' with '<input>' and verify <verify> characters   
   When I remark the field '<field>'
   Then the field '<field>' should have only <expected> characters.
+  And the '<field>' should contain only numbers
 
   Examples:
     | field      | input                                                         | verify | expected |
