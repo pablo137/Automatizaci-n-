@@ -88,7 +88,6 @@ Scenario: Validate email field
     | userName   | #!137777111addada                                             | 17     | 17       |
 
 @bug
-@It_should_display_an_alert_message_that_says_"Only_a_maximum_of_60_characters_are_allowed"
 Scenario: Validate excessive characters on the register fields.
   Given I enter '<field>' with '<input>' and verify <verify> characters   
   When I remark the field '<field>'
@@ -102,7 +101,6 @@ Scenario: Validate excessive characters on the register fields.
     | city       | Lorem ipsum dolor sit amet consectetur adipisicing elit. Dele     | 61     | 61       |
 
 @bug
-@It_should_display_an_alert_message_that_says_"Only_a_maximum_of_20_characters_are_allowed"
 Scenario: Validate excessive characters on the Phone field
   Given I enter '<field>' with '<input>' and verify <verify> characters   
   When I remark the field '<field>'
@@ -113,7 +111,6 @@ Scenario: Validate excessive characters on the Phone field
     | phone      | #!137777111addada1231                                             | 21     | 21       |
 
 @bug
-@It_should_display_an_alert_message_that_says_"Only_a_maximum_of_64_characters_are_allowed"
 Scenario: Validate excessive characters on the Email field
   Given I enter '<field>' with '<input>' and verify <verify> characters   
   When I remark the field '<field>'
@@ -124,7 +121,6 @@ Scenario: Validate excessive characters on the Email field
     | userName   | 312231sdffsad312231sdffsad312231sdffsad312231sdffsad3122@gmil.com | 65     | 65       |
 
 @bug
-@It_should_display_an_alert_message_that_says_"Only_a_maximum_of_40_characters_are_allowed"
 Scenario: Validate excessive characters on the State/Province field.
   Given I enter '<field>' with '<input>' and verify <verify> characters   
   When I remark the field '<field>'
