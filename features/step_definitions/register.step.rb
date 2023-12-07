@@ -1,27 +1,69 @@
-Given('Enter on the register page') do
-    puts current_path
-    xpath_base = '/html/body/div[2]/table/tbody/tr/td[2]/table/tbody/tr[2]/td/table/tbody/tr/td[2]/a'
-    element = find(:xpath, xpath_base)
-    url = element[:href].split('#').first
-    visit(url)
+def get_fields(data_type)
+  case data_type
+  when 'I enter the fields by filling in all the fields correctly'
+    {
+      'firstName' => 'Godson',
+      'lastName' => 'Adom',
+      'phone' => '77665544',
+      'userName' => 'god@pe.co ',
+      'address1' => 'Final East Circumbalacion',
+      'city' => 'Cochabamba',
+      'state' => 'Cercado',
+      'postalCode' => '591',
+      'email' => 'godson',
+      'password' => '137',
+      'confirmPassword' => '137'
+    }
+  when 'I leave all the fields empty'
+    {
+      'firstName' => ''
+    }
+  when 'I only fill in the User Name field'
+    {
+      'email' => 'pepe1137'
+    }
+  when 'I only enter the Password and Confirm Password fields'
+    {
+      'password' => '2611',
+      'confirmPassword' => '2611'
+    }
+  when 'I enter valid values in the User Information fields'
+    {
+      'email' => 'pepe2611',
+      'password' => '2611',
+      'confirmPassword' => '2611'
+    }
+
+  when 'I enter a different password than the confirm password'
+    {
+      'password' => '2611',
+      'confirmPassword' => '137'
+    }
+  when 'I enter only the password'
+    {
+      'password' => '2611'
+    }
+  when 'I enter only the Confirm Password'
+    {
+      'confirmPassword' => '137'
+    }
+  when 'I enter a valid username and password registered'
+    {
+      'userName' => 'pepe',
+      'password' => '123'
+    }
+  else
+    raise ArgumentError, "Invalid data type: #{data_type}"
   end
-Given('I enter in the fields with:') do |table|
-  credentials = table.rows_hash
-  fill_in 'firstName', with: credentials['firstname']
-  fill_in 'lastName', with: credentials['lastname']
-  fill_in 'phone', with: credentials['phone']
-  fill_in 'userName', with: credentials['email']
-  fill_in 'address1', with: credentials['address']
-  fill_in 'city', with: credentials['city']
-  fill_in 'state', with: credentials['state']
-  fill_in 'postalCode', with: credentials['postacode']
-  fill_in 'email', with: credentials['username']
-  fill_in 'password', with: credentials['password']
-  fill_in 'confirmPassword', with: credentials['cpassword']
 end
 
-Given('I enter in the fields {string} {string} {string}:') do |username,pass,cpass|
-    fill_in 'email', with: value
-    fill_in 'password', with: value
-    fill_in 'confirmPassword', with: value
+def fill_in_fields(fields)
+  fields.each do |field, value|
+    fill_in field, with: value
+  end
+end
+
+Given('{string}') do | data |
+  fields = get_fields(data)
+  fill_in_fields(fields)
 end
