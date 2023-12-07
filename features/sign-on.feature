@@ -1,7 +1,7 @@
 Feature: Login
-  As a BDD student
-  I want to test Guru99 login page
-  so I learn how to use Capybara
+  As a regular user,
+  I want to log in with my credentials
+  So I can find better deals and benefits by being registered.
 
 Background:
   Given Enter on the "SIGN-ON" page
