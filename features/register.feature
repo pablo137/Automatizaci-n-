@@ -54,7 +54,7 @@ Scenario: Validate user registration alert in the User Information section by on
   When I press the button "submit"
   Then A "PAssword and con.password does not match" message is then displayed on the screen
 
-Scenario: Validate fields with letters
+Scenario Outline: Validate fields with letters
   Given I enter '<field>' with '<input>' and verify <verify> characters   
   When I remark the field '<field>'
   Then the field '<field>' should have only <expected> characters.
@@ -68,7 +68,7 @@ Scenario: Validate fields with letters
     | state      | United States USA                                             | 17     | 17       |
 
 @bug
-Scenario: Validate fields with letters
+Scenario Outline: Validate fields with letters
   Given I enter '<field>' with '<input>' and verify <verify> characters   
   When I remark the field '<field>'
   Then the field '<field>' should have only <expected> characters.
@@ -80,7 +80,7 @@ Scenario: Validate fields with letters
     | postalCode | United States USA                                             | 17     | 17       |
 
 @bug
-Scenario: Validate email field 
+Scenario Outline: Validate email field 
   Given I enter '<field>' with '<input>' and verify <verify> characters   
   When I remark the field '<field>'
   Then the field '<field>' should have only <expected> characters.
@@ -91,7 +91,7 @@ Scenario: Validate email field
     | userName   | #!137777111addada                                             | 17     | 17       |
 
 @bug
-Scenario: Validate excessive characters on the register fields.
+Scenario Outline: Validate excessive characters on the register fields.
   Given I enter '<field>' with '<input>' and verify <verify> characters   
   When I remark the field '<field>'
   Then the field '<field>' should have only <expected> characters.
@@ -104,7 +104,7 @@ Scenario: Validate excessive characters on the register fields.
     | city       | Lorem ipsum dolor sit amet consectetur adipisicing elit. Dele     | 61     | 61       |
 
 @bug
-Scenario: Validate excessive characters on the Phone field
+Scenario Outline: Validate excessive characters on the Phone field
   Given I enter '<field>' with '<input>' and verify <verify> characters   
   When I remark the field '<field>'
   Then the field '<field>' should have only <expected> characters.
@@ -114,7 +114,7 @@ Scenario: Validate excessive characters on the Phone field
     | phone      | #!137777111addada1231                                             | 21     | 21       |
 
 @bug
-Scenario: Validate excessive characters on the Email field
+Scenario Outline: Validate excessive characters on the Email field
   Given I enter '<field>' with '<input>' and verify <verify> characters   
   When I remark the field '<field>'
   Then the field '<field>' should have only <expected> characters.
@@ -124,7 +124,7 @@ Scenario: Validate excessive characters on the Email field
     | userName   | 312231sdffsad312231sdffsad312231sdffsad312231sdffsad3122@gmil.com | 65     | 65       |
 
 @bug
-Scenario: Validate excessive characters on the State/Province field.
+Scenario Outline: Validate excessive characters on the State/Province field.
   Given I enter '<field>' with '<input>' and verify <verify> characters   
   When I remark the field '<field>'
   Then the field '<field>' should have only <expected> characters.
