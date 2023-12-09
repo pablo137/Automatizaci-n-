@@ -6,13 +6,13 @@ Feature: Login
 Background:
   Given Enter on the "SIGN-ON" page
 
-@SmockTest
+@SmokeTest
 Scenario: Validate a successfully authenticated user
   Given "I enter a valid username and password registered"    
   When I press the button "Submit"
   Then A "Login Successfully" message is then displayed on the screen
 
-@SmockTest
+@SmokeTest
 Scenario: Validate an unregistered user
   Given I enter the following user credentials:
     | username | fakeuser |
@@ -20,7 +20,7 @@ Scenario: Validate an unregistered user
   When I press the button "Submit"
   Then A "Enter your userName and password correct" message is then displayed on the screen
 
-@SmockTest
+@SmokeTest
 Scenario: Validate a user with incorrect password
   Given I enter the following user credentials:
     | username | pepe |
@@ -61,7 +61,7 @@ Scenario Outline: Validate excessive characters on the sign-on fields.
     | password | $###"!###!"##!"#$###"!###!"##!"#$###"!###!"##!"#$###"!###!"## | 61     | 61       |
     | password | 137777111addadadapeepep!"#!"#!137777111addadadapeepep!"#!"#ap | 61     | 61       |
 
-@SmockTest
+@SmokeTest
 Scenario: Validate exception by filling in only the User Name field
   Given I enter the following user credentials:
     | username | fakeuser |
@@ -69,7 +69,7 @@ Scenario: Validate exception by filling in only the User Name field
   When I press the button "Submit"
   Then A "Enter your userName and password correct" message is then displayed on the screen
 
-@SmockTest
+@SmokeTest
 Scenario: Validate exception by filling in only the Password field
   Given I enter the following user credentials:
     | username |  |
