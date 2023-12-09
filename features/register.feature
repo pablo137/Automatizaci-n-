@@ -6,6 +6,7 @@ Feature: Register
 Background:
   Given Enter on the "REGISTER" page
 
+@p
 @SmokeTest
 Scenario: Validate user registration successfully
   Given "I enter the fields by filling in all the fields correctly"
