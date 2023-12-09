@@ -1,7 +1,8 @@
 
 After do
-    page.driver.browser.manage.delete_cookie('sesion')
-    Capybara.current_session.driver.quit
+  page.driver.browser.manage.delete_all_cookies
+  page.driver.browser.manage.delete_cookie('sesion')
+  Capybara.current_session.driver.quit
 end
 
 
