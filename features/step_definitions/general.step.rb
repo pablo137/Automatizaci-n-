@@ -8,7 +8,9 @@ When('I press the button {string}') do |string|
 end
 
 Then('A {string} message is then displayed on the screen') do |msg|
-    expect(page).to have_content(msg)
+    xpath_expression = '/html/body/div[2]/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr/td[2]/table/tbody/tr[3]/td/p[2]/font'
+    element = find(:xpath, xpath_expression)
+    expect(element.text).to include(msg)
 end
 
 Given(/^I am on the Mercury Tours homepage$/) do

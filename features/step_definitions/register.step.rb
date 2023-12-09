@@ -10,9 +10,9 @@ def get_fields(data_type)
       'city' => 'Cochabamba',
       'state' => 'Cercado',
       'postalCode' => '591',
-      'email' => 'godson',
-      'password' => '137',
-      'confirmPassword' => '137'
+      'email' => ENV['USER'],
+      'password' => ENV['PASS'],
+      'confirmPassword' => ENV['CPASS']
     }
   when 'I leave all the fields empty'
     {
@@ -29,15 +29,15 @@ def get_fields(data_type)
     }
   when 'I enter valid values in the User Information fields'
     {
-      'email' => 'pepe2611',
-      'password' => '2611',
-      'confirmPassword' => '2611'
+      'email' => ENV['USER1'],
+      'password' => ENV['PASS1'],
+      'confirmPassword' => ENV['CPASS1'] 
     }
 
   when 'I enter a different password than the confirm password'
     {
-      'password' => '2611',
-      'confirmPassword' => '137'
+      'password' => ENV['PASS1'],
+      'confirmPassword' => ENV['CPASS'] 
     }
   when 'I enter only the password'
     {
@@ -49,8 +49,8 @@ def get_fields(data_type)
     }
   when 'I enter a valid username and password registered'
     {
-      'userName' => 'pepe',
-      'password' => '123'
+      'userName' => ENV['USER2'],
+      'password' => ENV['PASS2'] 
     }
   else
     raise ArgumentError, "Invalid data type: #{data_type}"
@@ -58,7 +58,7 @@ def get_fields(data_type)
 end
 
 def fill_in_fields(fields)
-  fields.each do |field, value|
+  for field, value in fields
     fill_in field, with: value
   end
 end

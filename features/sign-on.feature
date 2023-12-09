@@ -1,7 +1,7 @@
 Feature: Login
   As a regular user,
   I want to log in with my credentials
-  So I can find better deals and benefits by being registered.
+  So I can find better deals and benefits by being logged.
 
 Background:
   Given Enter on the "SIGN-ON" page
