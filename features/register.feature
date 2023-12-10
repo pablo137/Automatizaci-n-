@@ -79,7 +79,7 @@ Scenario Outline: Validate fields with letters
     | field      | input                                                         | verify | expected |
     | phone      | United States USA                                             | 17     | 17       |
     | postalCode | United States USA                                             | 17     | 17       |
-@p
+
 @bug
 Scenario Outline: Validate email field 
   Given I enter '<field>' with '<input>' and verify <verify> characters   
