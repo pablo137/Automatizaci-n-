@@ -23,12 +23,12 @@ class ChoiceInputPage
       }
     when 'I only fill in the User Name field'
       {
-        'email' => 'pepe1137'
+        'email' => ENV['USER3']
       }
     when 'I only enter the Password and Confirm Password fields'
       {
-        'password' => '2611',
-        'confirmPassword' => '2611'
+        'password' => ENV['PASS1'],
+        'confirmPassword' => ENV['CPASS1']
       }
     when 'I enter valid values in the User Information fields'
       {
@@ -44,11 +44,11 @@ class ChoiceInputPage
       }
     when 'I enter only the password'
       {
-        'password' => '2611'
+        'password' => ENV['PASS1']
       }
     when 'I enter only the Confirm Password'
       {
-        'confirmPassword' => '137'
+        'confirmPassword' => ENV['CPASS']
       }
     when 'I enter a valid username and password registered'
       {

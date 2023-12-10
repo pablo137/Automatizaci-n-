@@ -6,7 +6,7 @@ Feature: Register
 Background:
   Given Enter on the "REGISTER" page
 
-@p
+
 @SmokeTest
 Scenario: Validate user registration successfully
   Given "I enter the fields by filling in all the fields correctly"
@@ -80,6 +80,7 @@ Scenario Outline: Validate fields with letters
     | phone      | United States USA                                             | 17     | 17       |
     | postalCode | United States USA                                             | 17     | 17       |
 
+@p
 @bug
 Scenario Outline: Validate email field 
   Given I enter '<field>' with '<input>' and verify <verify> characters   

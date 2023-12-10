@@ -8,6 +8,7 @@ require 'capybara/cucumber'
 ENV['USER']="godson"
 ENV['USER1']="pepe2611"
 ENV['USER2']="pepe"
+ENV['USER3']="pepe137"
 ENV['PASS']="137"
 ENV['CPASS']="137"
 ENV['PASS1']="2611"

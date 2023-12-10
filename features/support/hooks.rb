@@ -5,10 +5,6 @@ Before do
   @page=Page.new
 end
 
-# Before do |scenario|
-#   @page=Page.new
-# end
-
 After do
   @page = nil
   page.driver.browser.manage.delete_all_cookies
