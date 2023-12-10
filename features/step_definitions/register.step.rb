@@ -31,9 +31,10 @@ Given('{string}') do | data |
 end
 
 And('the {string} should contain only numbers') do |field|
-  validate_field(field,'numbers')
+  # validate_field(field,'numbers')
+  @page.validate_field_page.validate_field(field,'numbers')
 end
 
 And('the {string} should contain a valid email') do |field|
-  validate_field(field,'email')
+  @page.validate_field_page.validate_field(field,'email')
 end

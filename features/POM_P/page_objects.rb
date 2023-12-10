@@ -8,4 +8,8 @@ class Page
     FillTheFields.new
   end
 
+  def validate_field_page
+    ValidateField.new
+  end
+
 end
