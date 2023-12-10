@@ -2,11 +2,18 @@ begin require 'rspec/expectations'; rescue LoadError; require 'spec/expectations
 require 'capybara'
 require 'capybara/dsl'
 require 'capybara/cucumber'
-require 'capybara-screenshot/cucumber'
+# require 'capybara-screenshot/cucumber'
 
 #PTravel Settings
-ENV['USER']="Pepazo"
-ENV['PSW']="ILoveQA"
+ENV['USER']="godson"
+ENV['USER1']="pepe2611"
+ENV['USER2']="pepe"
+ENV['USER3']="pepe137"
+ENV['PASS']="137"
+ENV['CPASS']="137"
+ENV['PASS1']="2611"
+ENV['CPASS1']="2611"
+ENV['PASS2']="123"
 
 Capybara.default_driver = :selenium
 
@@ -32,5 +39,4 @@ end
 #CapybaraDriverRegistrar.register_selenium_driver(:firefox)
 CapybaraDriverRegistrar.register_selenium_driver(:chrome)
 Capybara.run_server = false
-Capybara.save_path = '/ruta/que/no/existe'
 #World(Capybara)
