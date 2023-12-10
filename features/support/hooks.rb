@@ -1,4 +1,4 @@
-require_relative '../POM_P/page_objects.rb'
+require_relative '../page_object_pattern/page_objects.rb'
 Before do
   page.driver.browser.manage.window.maximize
   visit 'https://demo.guru99.com/test/newtours/index.php'
