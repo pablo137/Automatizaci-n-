@@ -4,4 +4,8 @@ class Page
     ChoiceInputPage.new
   end
 
+  def fill_the_fields_page
+    FillTheFields.new
+  end
+
 end

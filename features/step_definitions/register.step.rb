@@ -1,16 +1,6 @@
-def get_fields(data_type)
-  @page.choice_input_page.choice_input_to_fill data_type
-end
-
-def fill_in_fields(fields)
-  for field, value in fields
-    fill_in field, with: value
-  end
-end
-
 Given('{string}') do | data |
-  fields = get_fields(data)
-  fill_in_fields(fields)
+  fields = @page.choice_input_page.choice_input_to_fill data
+  @page.fill_the_fields_page.fill_the_fields fields
 end
 
 And('the {string} should contain only numbers') do |field|
