@@ -4,4 +4,8 @@ class Page
     RegisterPage.new
   end
 
+  def flight_page
+    FlightPage.new
+  end
+
 end

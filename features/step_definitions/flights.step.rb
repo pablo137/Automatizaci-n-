@@ -1,42 +1,17 @@
-When(/^I enter flight details as shown below$/) do |table|
+When("I enter flight details as shown below") do |table|
   data = table.rows_hash
-  data.each_pair do |key, value|
-    puts "Entering data: #{key} => #{value}"
-    case key
-    when "Type:"
-      find("input[type='radio'][name='tripType'][value='#{value}']").click
-    when "Passengers:"
-      select value, from: 'passCount'
-    when "Departing From:"
-      select value, from: 'fromPort'
-    when "On:"
-      date_parts = value.split(' ')
-      select date_parts[0], from: 'fromMonth'
-      select date_parts[1], from: 'fromDay'
-    when "Arriving In:"
-      select value, from: 'toPort'
-    when "Returning:"
-      date_parts = value.split(' ')
-      select date_parts[0], from: 'toMonth'
-      select date_parts[1], from: 'toDay'
-    when "Service Class:"
-      find("input[type='radio'][name='servClass'][value='#{value}']").click
-    when "Airline:"
-      select value, from: 'airline'
-    end
-  end
+  @page.flight_page.enter_flight_details(data)
 end
 
-When(/^I press the CONTINUE button$/) do
-  click_button("findFlights")
+When("I press the CONTINUE button") do
+  @page.flight_page.click_continue_button
 end
 
-Then(/^A web site No Seats Avaialble message$/) do
+Then("A web site No Seats Available message") do
   expected_message = "After flight finder - No Seats Avaialble"
-  expect(page).to have_content(expected_message)
+  expect(@page.flight_page.no_seats_available_message_displayed?).to be(true), "Expected '#{expected_message}' to be present on the page."
 end
 
-When(/^I press the yellow BACK TO HOME button$/) do
-  xpath = '/html/body/div[2]/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr[1]/td[2]/table/tbody/tr[2]/td/a'
-  find(:xpath, xpath).click
+When("I press the yellow BACK TO HOME button") do
+  @page.flight_page.click_back_to_home_button
 end
