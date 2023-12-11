@@ -1,8 +1,10 @@
 Feature: Several websites are under construction
-    Return to home
+  In order to return to the Mercury Tours homepage
+  As a user
+  I want to navigate back from under construction sections
 
-
-  Scenario Outline: Enter a section
+  @SmokeTest
+  Scenario Outline: Navigate back to home from under construction sections
     Given Enter on the "<Section>" page
     And A web site under construction message
     When I press the BACK TO HOME button
