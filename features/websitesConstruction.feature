@@ -6,7 +6,7 @@ Feature: Several websites are under construction
   @SmokeTest
   Scenario Outline: Navigate back to home from under construction sections
     Given Enter on the "<Section>" page
-    And A web site under construction message
+    And I should see a web site under construction message
     When I press the BACK TO HOME button
     Then I am on the Mercury Tours homepage
 
