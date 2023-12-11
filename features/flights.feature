@@ -2,10 +2,17 @@ Feature: Mercury Tours Flights section
   Find flights with low fares
   Seats not available
 
-  @vuelos
-  Scenario: Find a flight
+  Background:
     Given Enter on the "Flights" page
-    And I enter flight details as shown below
+
+  @SmokeTest
+  Scenario: Flight section
+    Given I press the CONTINUE button
+    Then A web site No Seats Available message
+  
+  @FindFlight
+  Scenario Outline: Find a flight
+    Given I enter flight details as shown below
       | Type:           | <Type:>           |
       | Passengers:     | <Passengers:>     |
       | Departing From: | <Departing From:> |
@@ -15,7 +22,7 @@ Feature: Mercury Tours Flights section
       | Service Class:  | <Service Class:>  |
       | Airline:        | <Airline:>        |
     When I press the CONTINUE button
-    Then A web site No Seats Avaialble message
+    Then A web site No Seats Available message
 
     Examples: 
       | Type:     | Passengers: | Departing From: | On:          | Arriving In:  | Returning:   | Service Class: | Airline:            |
@@ -28,9 +35,9 @@ Feature: Mercury Tours Flights section
       | oneway    |           3 | San Francisco   | July  10     | Seattle       | November  27 | Coach          | Unified Airlines    |
       | oneway    |           4 | Seattle         | November  27 | Sydney        | December  15 | First          | Pangea Airlines     |
 
-  @backToHome
-  Scenario: flight BACK to Home
-    Given Enter on the "Flights" page
-    And I press the CONTINUE button
+  @ReturnToHome
+  Scenario: Flight BACK to Home
+    Given I press the CONTINUE button
+    And A web site No Seats Available message
     When I press the yellow BACK TO HOME button
-    Then I am on the Mercury Tours homepage
+    Then I should be back on the Mercury Tours homepage
